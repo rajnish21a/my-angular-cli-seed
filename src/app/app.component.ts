@@ -1,12 +1,35 @@
-import { Component } from '@angular/core';
+import {
+  Component
+} from '@angular/core';
+import {
+ FormsModule
+} from '@angular/forms';
+
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  template: `
+    <h1 > {{title}} < /h1>
+    <h2 > {{hero.name}}  details! </h2>
+    <div><label> id: </label>{{hero.id}}</div>
+    <div>
+    <label> name: </label>
+    <input [(ngModel)]="hero.name" placeholder="name">
+    </div>
+    `,
   styleUrls: ['./app.component.css']
 })
 
+
 export class AppComponent {
   title = 'My First Angular App!!';
-  hero = 'Windstorm';
+  hero: Hero = {
+    id: 1,
+    name: 'Windstorm'
+  };
 }
+
+export class Hero {
+  id: number;
+  name: string;
+};
