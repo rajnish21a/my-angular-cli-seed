@@ -11,10 +11,13 @@ import {
 import {
   AppComponent
 } from './app.component';
+import { HeroDetailsComponent } from './hero-details/hero-details.component';
+
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeroDetailsComponent
   ],
   imports: [
     BrowserModule,
